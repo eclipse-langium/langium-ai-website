@@ -1,0 +1,40 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# a newer push to the same ref cancels an in-flight run
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Lane 1 — twoslash compile-only gate. Building the docs runs the per-block
+  # typechecking code in docs
+  lane1-twoslash:
+    name: Twoslash check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run docs:build
+
+  # Smoke test using `lai` with minilogo
+  lane2-cli-smoke:
+    name: Lane 2 — CLI smoke (gate:cli)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run ci:cli

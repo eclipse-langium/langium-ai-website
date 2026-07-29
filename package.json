@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "check": "vitepress build docs",
+    "ci:cli": "node scripts/lane2-smoke.mjs",
+    "ci": "npm run docs:build && npm run ci:cli"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "0.115.0",
+    "@shikijs/vitepress-twoslash": "^4.4.2",
+    "@types/node": "^24.13.3",
+    "ollama": "0.6.3",
+    "openai": "7.4.0",
+    "typescript": "^6.0.3",
+    "vitepress": "^2.0.0-alpha.18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "langium-ai": "0.5.0",
+    "langium-ai-tools": "6.0.0",
+    "langium-minilogo": "4.2.1"
+  }
+}
