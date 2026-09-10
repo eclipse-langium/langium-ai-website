@@ -7,7 +7,7 @@ hero:
   text: "AI toolbox for grounding LLMs on Langium DSLs"
   tagline: "Build, evaluate, and refine AI-powered tooling for your Langium DSL — provider-agnostic, and grounded in your DSL's grammar."
   image:
-    src: /langium_logo_w_nib.svg
+    src: /lai.svg
     alt: Langium
   actions:
     - theme: brand
