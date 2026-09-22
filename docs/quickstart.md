@@ -1,3 +1,7 @@
+---
+description: "Install the lai CLI in an existing Langium project, generate a descriptor plus a system prompt, and get your first evaluations running."
+---
+
 # Quickstart
 
 This guide will walk you through getting set up with `langium-ai-tools` and `lai` (the `langium-ai` CLI) in your existing Langium project.

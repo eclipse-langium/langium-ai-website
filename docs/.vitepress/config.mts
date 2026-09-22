@@ -2,10 +2,62 @@ import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import { formatTwoslashError } from './twoslash-errors'
 
+const hostname = 'https://ai.langium.org'
+const ogImage = `${hostname}/og-image.png`
+const siteDescription = 'AI toolbox for grounding LLMs on Langium DSLs with evaluation, constraints, and agent skills'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Langium AI",
-  description: "AI toolbox for grounding LLMs on Langium DSLs with evaluation, constraints, and agent skills",
+  description: siteDescription,
+
+  sitemap: { hostname },
+
+  // static half of the link preview: the card image and its shape. the
+  // per-page title/description/url half is added in `transformPageData`.
+  head: [
+    ['link', { rel: 'icon', href: '/lai.svg' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'Langium AI' }],
+    ['meta', { property: 'og:image', content: ogImage }],
+    ['meta', { property: 'og:image:type', content: 'image/png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:image:alt', content: 'Langium AI: AI toolbox for grounding LLMs on Langium DSLs' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: ogImage }]
+  ],
+
+  // every page gets its own title, description, and canonical URL in the
+  // unfurl. VitePress emits `<title>` and `<meta name="description">` on its
+  // own, but no Open Graph or Twitter equivalents.
+  transformPageData(pageData) {
+    const isHome = pageData.frontmatter.layout === 'home'
+    const title = isHome || !pageData.title
+      ? 'Langium AI'
+      : `${pageData.title} | Langium AI`
+
+    // `cleanUrls` is off, so built pages live at `<path>.html`; index pages
+    // collapse to their directory.
+    const path = pageData.relativePath
+      .replace(/(^|\/)index\.md$/, '$1')
+      .replace(/\.md$/, '.html')
+    const url = `${hostname}/${path}`
+
+    // pageData.description is '' unless the page declares one in frontmatter
+    const description = pageData.description || siteDescription
+
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }],
+      ['link', { rel: 'canonical', href: url }]
+    )
+  },
+
   vite: {
     build: {
       chunkSizeWarningLimit: 1024,

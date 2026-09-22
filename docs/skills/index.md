@@ -1,3 +1,7 @@
+---
+description: "Agent skills that equip Claude Code, Codex, Gemini, Copilot, and other coding agents to work with the Langium AI toolkit and Langium projects."
+---
+
 # Agent Skills
 
 Agent skills are Langium AI's third contribution, alongside the [`langium-ai-tools`](/langium-ai-tools/) library and the [`lai` CLI](/langium-ai/).

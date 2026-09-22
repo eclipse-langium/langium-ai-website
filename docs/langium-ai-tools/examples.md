@@ -1,3 +1,7 @@
+---
+description: "End-to-end langium-ai-tools examples, from splitting a document to running a scored evaluation."
+---
+
 # Examples
 
 The capability pages show how to leverage the tools of `langium-ai-tools` separately.

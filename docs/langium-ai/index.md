@@ -1,3 +1,7 @@
+---
+description: "The lai CLI bootstraps langium-ai-tools for your Langium DSL and gives you an evaluation loop to refine AI features."
+---
+
 # langium-ai (the `lai` CLI)
 
 The Langium AI CLI (`lai`) is the command-line front end for Langium AI.

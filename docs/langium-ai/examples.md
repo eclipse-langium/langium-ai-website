@@ -1,3 +1,7 @@
+---
+description: "lai CLI examples covering project setup, descriptor generation, and running evaluations."
+---
+
 # Examples
 
 The following are task-oriented walkthroughs for the `lai` CLI, centered on the evaluation workflow.

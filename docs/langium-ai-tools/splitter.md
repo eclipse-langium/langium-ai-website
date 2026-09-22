@@ -1,3 +1,7 @@
+---
+description: "Chunk DSL documents along syntactic boundaries by reusing your language's own parser and AST instead of splitting on characters or lines."
+---
+
 # Splitter
 
 Generic text splitters can chunk a document at some character count, a line count, on blanks, or with a regex.

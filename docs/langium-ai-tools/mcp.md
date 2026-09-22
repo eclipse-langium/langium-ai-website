@@ -1,3 +1,7 @@
+---
+description: "Evaluate an MCP server the same way you evaluate a model, scoring the tools it exposes against your DSL."
+---
+
 # Evaluating MCP
 
 The [Model Context Protocol](https://modelcontextprotocol.io) (MCP) lets a model reach tools served by some external process, such as a filesystem, a database connector, or a server you write to expose your Langium language's own LSP-related capabilities (parse, validate, generate).

@@ -1,3 +1,7 @@
+---
+description: "Provider-agnostic building blocks for AI features on a Langium DSL: splitting, evaluating, and analyzing, built on services your language already has."
+---
+
 # langium-ai-tools
 
 `langium-ai-tools` is the core library of Langium AI. It gives provider-agnostic building

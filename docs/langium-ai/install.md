@@ -1,3 +1,7 @@
+---
+description: "Install the lai CLI and verify it detects your Langium project."
+---
+
 # Installing `lai`
 
 Getting set up with Langium AI can be done in a couple of steps: installing `langium-ai`, then running `lai init` to get everything going.

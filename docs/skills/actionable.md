@@ -1,3 +1,7 @@
+---
+description: "Actionable skills walk a coding agent through concrete Langium AI tasks, step by step."
+---
+
 # Actionable Skills
 
 Actionable skills are marked `user-invocable: true`.
