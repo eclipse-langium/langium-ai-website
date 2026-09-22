@@ -1,3 +1,7 @@
+---
+description: "Reference skills give coding agents the background knowledge they need regarding Langium AI and Langium itself."
+---
+
 # Reference Skills
 
 Reference skills carry background knowledge an agent draws on while working with LAI or with a

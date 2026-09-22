@@ -1,3 +1,7 @@
+---
+description: "Write and run vitest-style evaluations over your DSL, and track whether a prompt, model, or context change actually improves results."
+---
+
 # Evals
 
 `langium-ai-tools/evals` is a vitest-style API for writing evaluation files. If you've written

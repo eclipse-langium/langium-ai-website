@@ -1,3 +1,7 @@
+---
+description: "Inspect Langium DSL programs as data to extract structure, metrics, and context for AI pipelines."
+---
+
 # Analyzer
 
 The `LangiumDocumentAnalyzer` answers an important question that comes up as soon as you have a set of DSL

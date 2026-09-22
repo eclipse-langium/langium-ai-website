@@ -1,3 +1,7 @@
+---
+description: "Evaluate the tool calls an LLM makes, checking argument shape and call sequence alongside DSL correctness."
+---
+
 # Evaluating tool calls
 
 Generating valid DSL text is one job an LLM can handle quite well.

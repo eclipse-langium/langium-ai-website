@@ -1,3 +1,7 @@
+---
+description: "Score LLM output against your parser, validator, and type checker to turn DSL correctness into a measurable result."
+---
+
 # Evaluator
 
 An evaluator turns a model's output into metrics.

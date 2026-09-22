@@ -82,7 +82,8 @@ docs/
   langium-ai-tools/     # library docs (gated)
   langium-ai/           # lai CLI docs
   skills/               # agent skills docs
-  public/               # static assets
+  public/               # static assets, incl. og-image.png (social preview card)
+assets/og-image.svg     # source for og-image.png, rendered and committed by hand
 scripts/lane2-smoke.mjs # Lane 2 CLI smoke test
 tsconfig.json           # twoslash compiler options (not a build config)
 SITE-PLANNING.md        # design rationale for the site + gate
@@ -90,6 +91,26 @@ SITE-PLANNING.md        # design rationale for the site + gate
   ci.yml                # both gate lanes, on PRs and pushes to main
   deploy.yml            # builds and publishes to GitHub Pages
 ```
+
+## Social previews
+
+`config.mts` emits the Open Graph and Twitter card tags that Slack, Discord, X, LinkedIn,
+and iMessage read when a link is unfurled. VitePress emits neither on its own.
+
+- Site-wide tags (`og:image`, `og:type`, `twitter:card`) live in `head`. Per-page
+  `og:title` / `og:description` / `og:url` / `rel=canonical` are generated in
+  `transformPageData`, so new pages are covered automatically.
+- URLs must be **absolute**. Scrapers drop relative ones, which is what produced blank
+  previews. They are built from the `hostname` const; change it if the site ever moves.
+- The card is `docs/public/og-image.png` (1200x630, the size every platform unfurls at).
+  Regenerate it from the source SVG after editing:
+  `rsvg-convert -w 1200 -h 630 assets/og-image.svg -o docs/public/og-image.png`
+  (`brew install librsvg`). The PNG is committed; nothing renders it at build time.
+- The card background is light on purpose: the Langium nib mark uses dark teals that
+  vanish on a dark card.
+- Changes only show up once the new tags are live at ai.langium.org. Platforms cache
+  unfurls aggressively — validate with the
+  [OpenGraph debugger](https://www.opengraph.xyz/) after deploy.
 
 ## Deployment
 
@@ -113,6 +134,9 @@ and the comment together.
 - New fence languages must be registered in `markdown.languages` in `config.mts`, or Shiki
   won't render them. `json` is required for twoslash type-hover popovers.
 - New pages must be wired into `nav`/`sidebar` in `config.mts`.
+- Every page needs a `description` in its frontmatter. It feeds `<meta name="description">`
+  and the `og:`/`twitter:` description in link previews; without one the page falls back to
+  the generic site description, so the unfurl says nothing specific.
 - Canonical code repo is `eclipse-langium/langium-ai` — site links and the CHANGELOG link
   out there. The `langium-minilogo` fixture lives at `langium/langium-minilogo`. There is
   no `editLink` configured, so pages have no edit-this-page link; add one to

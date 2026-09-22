@@ -1,3 +1,7 @@
+---
+description: "Full command reference for lai: init, gen descriptor, gen sysprompt, and evaluate."
+---
+
 # Command reference
 
 Most `lai` commands are organized around the [refinement loop](/langium-ai/#the-refinement-loop).

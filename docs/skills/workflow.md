@@ -1,3 +1,7 @@
+---
+description: "How reference and actionable skills are combined into a typical build, evaluate, and refine workflow with a coding agent."
+---
+
 # Typical Workflow
 
 Skills and the CLI are designed to work together effectively.

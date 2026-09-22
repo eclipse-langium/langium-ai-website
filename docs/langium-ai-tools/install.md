@@ -1,3 +1,7 @@
+---
+description: "How to install langium-ai-tools into a Langium project and confirm peer dependencies line up."
+---
+
 # Install
 
 `langium-ai-tools` is a library which helps to guide the development of AI applications that leverage Langium DSLs.
