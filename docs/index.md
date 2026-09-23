@@ -34,7 +34,10 @@ features:
 
 ## What is Langium AI?
 
-[![npm - langium-ai-tools](https://img.shields.io/npm/v/langium-ai-tools?label=langium-ai-tools&logo=npm)](https://www.npmjs.com/package/langium-ai-tools) [![npm - langium-ai](https://img.shields.io/npm/v/langium-ai?label=langium-ai&logo=npm)](https://www.npmjs.com/package/langium-ai)
+<div class="npm-badges">
+  <a href="https://www.npmjs.com/package/langium-ai-tools" target="_blank" rel="noreferrer"><img src="https://img.shields.io/npm/v/langium-ai-tools?label=langium-ai-tools&logo=npm" alt="npm - langium-ai-tools"></a>
+  <a href="https://www.npmjs.com/package/langium-ai" target="_blank" rel="noreferrer"><img src="https://img.shields.io/npm/v/langium-ai?label=langium-ai&logo=npm" alt="npm - langium-ai"></a>
+</div>
 
 Langium AI is a suite of tools that make it easier to build AI applications with [Langium](https://langium.org) DSLs.
 
