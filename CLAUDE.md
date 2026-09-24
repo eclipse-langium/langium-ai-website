@@ -78,7 +78,8 @@ docs/
   .vitepress/
     config.mts          # site config + twoslash markdown transformer + sidebar/nav
     twoslash-errors.ts  # rewrites twoslash errors into file:line:column reports
-    theme/index.ts      # default theme + twoslash hover UI
+    theme/index.ts      # default theme + twoslash hover UI, imports custom.css
+    theme/custom.css    # site CSS overrides on top of the default theme
   langium-ai-tools/     # library docs (gated)
   langium-ai/           # lai CLI docs
   skills/               # agent skills docs
