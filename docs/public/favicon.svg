@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!--
+    the two sparkles from the lai mark (docs/public/lai.svg), in Langium teals.
+    deliberately not the Langium nib, which is already langium.org's favicon.
+    regenerate the PNG fallback after editing:
+      rsvg-convert -w 64 -h 64 docs/public/favicon.svg -o docs/public/favicon.png
+  -->
+  <style>
+    .big { fill: #26888c; }
+    .small { fill: #0c5450; }
+    @media (prefers-color-scheme: dark) {
+      .big { fill: #3fb0b4; }
+      .small { fill: #26888c; }
+    }
+  </style>
+  <path class="big" d="M26,12Q29.9,31.4 44,37Q29.9,42.6 26,62Q22.1,42.6 8,37Q22.1,31.4 26,12Z"/>
+  <path class="small" d="M48,3Q50,13.3 57.6,16Q50,18.7 48,29Q46,18.7 38.4,16Q46,13.3 48,3Z"/>
+</svg>
