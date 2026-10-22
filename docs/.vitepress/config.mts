@@ -16,7 +16,9 @@ export default defineConfig({
   // static half of the link preview: the card image and its shape. the
   // per-page title/description/url half is added in `transformPageData`.
   head: [
-    ['link', { rel: 'icon', href: '/lai.svg' }],
+    // svg favicon with a png fallback for browsers that can't use svg icons
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/favicon.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'Langium AI' }],
     ['meta', { property: 'og:image', content: ogImage }],
