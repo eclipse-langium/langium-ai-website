@@ -23,9 +23,23 @@ npx skills add eclipse-langium/langium-ai
 ```
 
 The `skills` package detects your agent and installs into the correct directory
-automatically. If you'd rather install by hand, copy the skill folders from the
+automatically. This is also the recommended route for OpenCode, which reads skills from
+`.agents/skills` and `.claude/skills`. If you'd rather install by hand, copy the skill folders from the
 [`skills/`](https://github.com/eclipse-langium/langium-ai/tree/main/skills) directory of the
 repository into your agent's skills directory (for example `.claude/skills/`).
+
+### As a plugin or extension
+
+You can instead install all skills as a single versioned plugin, named `langium-ai`, through your agent's own plugin system:
+
+| Agent | Install |
+|---|---|
+| Claude Code | `/plugin marketplace add eclipse-langium/langium-ai`, then `/plugin install langium-ai@langium-ai` |
+| Codex | `codex plugin marketplace add eclipse-langium/langium-ai`, then install `langium-ai` from the plugin directory |
+| Gemini CLI | `gemini extensions install https://github.com/eclipse-langium/langium-ai` |
+| Pi | `pi install git:github.com/eclipse-langium/langium-ai` |
+
+Each plugin version is listed in the [CHANGELOG](https://github.com/eclipse-langium/langium-ai/blob/main/CHANGELOG.md) under its "agent skills" entry.
 
 ## Two categories
 
@@ -38,7 +52,7 @@ Background knowledge an agent draws on while working. These are typically not in
 | Skill | Description |
 |---|---|
 | **lai** | Guide for using the LAI CLI: commands, configuration, evaluation workflow, and analysis |
-| **langium** | Comprehensive reference for how Langium projects work: grammar, parsing, validation, scoping, DI, and LSP integration |
+| **langium** | Build, fix, and improve Langium 4.x languages: recipes, best practices, and troubleshooting for grammars, scoping, validation, LSP features, code generation, testing, and multi-language projects |
 
 You can jump straight to the [Reference skills](/skills/reference) to read them in more detail.
 
